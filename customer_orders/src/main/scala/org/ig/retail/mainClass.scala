@@ -10,6 +10,8 @@ object mainClass {
   // #############################do sqlContext after this
     
   val sparkConf = new SparkConf().setAppName("CustOrdersApp")
+      .set("spark.local.dir", "/tmp/spark-temp");
+
  // .setMaster("local[*]")  //local
   val sparkCont = new SparkContext(sparkConf)
 
