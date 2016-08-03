@@ -21,7 +21,7 @@ object mainClass {
   
 val RDDCust = sparkCont.textFile(args(1)).map( x => x.split(",")).map{ x => x(2) -> (x(1),x(3))}
   
-val RDDjoin =   RDDorders.join(RDDCust).saveAsTextFile(args(2))
+RDDorders.join(RDDCust).saveAsTextFile(args(2))
   
   
   
